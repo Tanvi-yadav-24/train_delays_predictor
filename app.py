@@ -55,7 +55,7 @@ lead_delay_input = st.slider("Lead Train Delay (in minutes)", min_value=0, max_v
 delta_input = st.slider("Gap Between Trains at Same Station (in minutes)", min_value=0, max_value=60, value=10)
 
 if st.button("📡 Predict Ripple Effect"):
-    ripple_prob = clf.predict_proba([[lead_delay_input, delta_input]])[0][1]
+    ripple_prob = ripple_clf.predict_proba([[lead_delay_input, delta_input]])[0][1]
     st.info(f"Probability that a downstream train will be significantly delayed: **{ripple_prob*100:.2f}%**")
 
 # --- Visual Insights ---
