@@ -19,6 +19,7 @@ import networkx as nx
 # --- Load Data and Models ---
 df = pd.read_csv("train_data.csv")
 ripple_df = pd.read_csv("ripple_pairs.csv")
+ripple_clf = joblib.load("ripple_predictor.pkl")
 model = joblib.load("delay_predictor.pkl")
 
 # --- Title and Introduction ---
